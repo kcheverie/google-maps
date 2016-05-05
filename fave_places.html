@@ -18,34 +18,25 @@
       }
       #map {
         height: 100%;
-        width: 70%;
+        width: 100%;
 
       }
-      .my-content {
-        width:30%;
-        float:left;
-        padding:20px;
+
+
+      li {
+        cursor:pointer;
       }
+
+      img {
+        width:250px;
+      }
+
     </style>
   </head>
   <body>
-  <div class="my-content">
-    <h1>my favourite lighthouses</h1>
-    <ul>
-      <li>East Point</li>
-      <li>West Point</li>
-      <li>Point Prim</li>
-      <li>Wood Islands</li>
-      <li>Cape Bear</li>
-      <li>Blockhouse</li>
-      <li>Brighton Beach Range Light</li>
-      <li>North Cape</li>
 
-    </ul>
-  </div>
     <div id="map"></div>
     <script>
-
 
       function initMap() {
         var peiLatLng = {lat:46.500, lng:  -63.3133};
@@ -58,13 +49,19 @@
         var brightonBeachLatLng = {lat:46.230689 , lng:-63.147590 };
         var northCapeLatLng = {lat:47.057722 , lng:-63.996917 };
 
-        var prev_infowindow =false; 
+        var eastpoint = "<h2>East Point</h2>" + "<p>built in 1867</p>" + "<img src='images/eastpoint.jpg'>"
+        var westpoint = "<h2>West Point</h2>" + "<p>built in 1875</p>" + "<img src='images/westpoint.jpg'>"
+        var pointprim = "<h2>Point Prim</h2>" + "<p>built in 1846</p>" + "<img src='images/pointprim.jpg'>"
+        var woodislands = "<h2>Wood Islands</h2>" + "<p>built in 1876</p>" + "<img src='images/woodislands.jpg'>"
+        var capebear = "<h2>Cape Bear</h2>" + "<p>built in 1881</p>" + "<img src='images/capebear.jpg'>"
+        var blockhouse = "<h2>Blockhouse</h2>" + "<p>built in 1851</p>" + "<img src='images/blockhouse.jpg'>"
+        var brightonbeach = "<h2>Brighton Range Light</h2>" + "<p>built in 1890</p>" + "<img src='images/brightonbeach.jpg'>"
+        var northcape = "<h2>North Cape</h2>" + "<p>built in 1866</p>" + "<img src='images/northcape.jpg'>"
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 8,
           center: peiLatLng
         });
-
         var eastpointmarker = new google.maps.Marker({
           animation: google.maps.Animation.DROP,
           position: eastPointLatLng,
@@ -75,7 +72,7 @@
           eastpointwindow.open(map, eastpointmarker);
         });
         var eastpointwindow = new google.maps.InfoWindow({
-          content: "East Point"
+          content: eastpoint
         });
 
         var westpointmarker = new google.maps.Marker({
@@ -88,7 +85,7 @@
           westpointwindow.open(map, westpointmarker);
         });
         var westpointwindow = new google.maps.InfoWindow({
-          content: "West Point"
+          content: westpoint
         });
 
         var pointprimmarker = new google.maps.Marker({
@@ -101,7 +98,7 @@
           pointprimwindow.open(map, pointprimmarker);
         });
         var pointprimwindow = new google.maps.InfoWindow({
-          content: "Point Prim"
+          content: pointprim
         });
 
         var woodislandsmarker = new google.maps.Marker({
@@ -114,7 +111,7 @@
           woodislandswindow.open(map, woodislandsmarker);
         });
         var woodislandswindow = new google.maps.InfoWindow({
-          content: "Wood Islands"
+          content: woodislands
         });
 
         var capebearmarker = new google.maps.Marker({
@@ -127,7 +124,7 @@
           capebearwindow.open(map, capebearmarker);
         });
         var capebearwindow = new google.maps.InfoWindow({
-          content: "Cape Bear"
+          content: capebear
         });
 
         var blockhousemarker = new google.maps.Marker({
@@ -140,7 +137,7 @@
           blockhousewindow.open(map, blockhousemarker);
         });
         var blockhousewindow = new google.maps.InfoWindow({
-          content: "Blockhouse"
+          content: blockhouse
         });
 
         var brightonbeachmarker = new google.maps.Marker({
@@ -153,7 +150,7 @@
           brightonbeachwindow.open(map, brightonbeachmarker);
         });
         var brightonbeachwindow = new google.maps.InfoWindow({
-          content: "Brighton Beach"
+          content: brightonbeach
         });
 
         var northcapemarker = new google.maps.Marker({
@@ -166,7 +163,7 @@
           northcapewindow.open(map, northcapemarker);
         });
         var northcapewindow = new google.maps.InfoWindow({
-          content: "North Cape"
+          content: northcape
         });
 
       }
