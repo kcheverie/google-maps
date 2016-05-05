@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>my fave lighthouses</title>
+    <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+        width: 70%;
+
+      }
+      .my-content {
+        width:30%;
+        float:left;
+        padding:20px;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="my-content">
+    <h1>my favourite lighthouses</h1>
+    <ul>
+      <li>East Point</li>
+      <li>West Point</li>
+      <li>Point Prim</li>
+      <li>Wood Islands</li>
+      <li>Cape Bear</li>
+      <li>Blockhouse</li>
+      <li>Brighton Beach Range Light</li>
+      <li>North Cape</li>
+
+    </ul>
+  </div>
+    <div id="map"></div>
+    <script>
+
+
+      function initMap() {
+        var peiLatLng = {lat:46.500, lng:  -63.3133};
+        var eastPointLatLng = {lat:46.452328 , lng:-61.972010 };
+        var westPointLatLng = {lat:46.620417 , lng:-64.386395 };
+        var pointPrimLatLng = {lat:46.050241 , lng: -63.038988};
+        var woodIslandsLatLng = {lat:45.949948 , lng:-62.746219 };
+        var capeBearLatLng = {lat:46.0036241 , lng:-62.4668289 };
+        var blockHouseLatLng = {lat:46.190611 , lng:-63.129418 };
+        var brightonBeachLatLng = {lat:46.230689 , lng:-63.147590 };
+        var northCapeLatLng = {lat:47.057722 , lng:-63.996917 };
+
+        var prev_infowindow =false; 
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: peiLatLng
+        });
+
+        var eastpointmarker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: eastPointLatLng,
+          map: map,
+          title: 'East Point'
+        });
+        eastpointmarker.addListener('click', function() {
+          eastpointwindow.open(map, eastpointmarker);
+        });
+        var eastpointwindow = new google.maps.InfoWindow({
+          content: "East Point"
+        });
+
+        var westpointmarker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: westPointLatLng,
+          map: map,
+          title: 'West Point'
+        });
+        westpointmarker.addListener('click', function() {
+          westpointwindow.open(map, westpointmarker);
+        });
+        var westpointwindow = new google.maps.InfoWindow({
+          content: "West Point"
+        });
+
+        var pointprimmarker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: pointPrimLatLng,
+          map: map,
+          title: 'Point Prim'
+        });
+        pointprimmarker.addListener('click', function() {
+          pointprimwindow.open(map, pointprimmarker);
+        });
+        var pointprimwindow = new google.maps.InfoWindow({
+          content: "Point Prim"
+        });
+
+        var woodislandsmarker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: woodIslandsLatLng,
+          map: map,
+          title: 'Wood Islands'
+        });
+        woodislandsmarker.addListener('click', function() {
+          woodislandswindow.open(map, woodislandsmarker);
+        });
+        var woodislandswindow = new google.maps.InfoWindow({
+          content: "Wood Islands"
+        });
+
+        var capebearmarker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: capeBearLatLng,
+          map: map,
+          title: 'Cape Bear'
+        });
+        capebearmarker.addListener('click', function() {
+          capebearwindow.open(map, capebearmarker);
+        });
+        var capebearwindow = new google.maps.InfoWindow({
+          content: "Cape Bear"
+        });
+
+        var blockhousemarker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: blockHouseLatLng,
+          map: map,
+          title: 'Blockhouse'
+        });
+        blockhousemarker.addListener('click', function() {
+          blockhousewindow.open(map, blockhousemarker);
+        });
+        var blockhousewindow = new google.maps.InfoWindow({
+          content: "Blockhouse"
+        });
+
+        var brightonbeachmarker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: brightonBeachLatLng,
+          map: map,
+          title: 'Brighton Beach'
+        });
+        brightonbeachmarker.addListener('click', function() {
+          brightonbeachwindow.open(map, brightonbeachmarker);
+        });
+        var brightonbeachwindow = new google.maps.InfoWindow({
+          content: "Brighton Beach"
+        });
+
+        var northcapemarker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: northCapeLatLng,
+          map: map,
+          title: 'North Cape'
+        });
+        northcapemarker.addListener('click', function() {
+          northcapewindow.open(map, northcapemarker);
+        });
+        var northcapewindow = new google.maps.InfoWindow({
+          content: "North Cape"
+        });
+
+      }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1xoXtwsce4HmAH3WkAgvFAqaPIUv8hh8&callback=initMap">
+    </script>
+  </body>
+</html>
